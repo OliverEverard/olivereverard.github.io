@@ -2,46 +2,70 @@
 <html>
   <head>
     <title>Github Repositories</title>
-     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
   </head>
   <body>
-        <div class="bg-gradient-to-r from-purple-500 to-indigo-500 text-transparent py-2 px-4 w-screen flex items-center">
-        <h1 class="titleFont">GitHub Repositories </h1>
-      </div>
-    <ul id="repositories"></ul>
-    
+    <div class="bg-gradient-to-r from-purple-500 to-indigo-500 text-transparent py-2 px-4 w-screen flex items-center">
+      <h1 class="titleFont">GitHub Repositories</h1>
+    </div>
+    <table id="repositories">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>URL</th>
+          <th>Deployed</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
     <script>
-      const apiURL = "https://api.github.com/users/olivereverard/repos?type=owner&sort=updated";
-      const repositoriesList = document.getElementById("repositories");
-      
+      const apiURL =
+        "https://api.github.com/users/olivereverard/repos?type=owner&sort=updated";
+      const repositoriesList = document.getElementById("repositories").querySelector("tbody");
+
       fetch(apiURL)
-        .then(response => response.json())
-        .then(data => {
-          data.forEach(repository => {
+        .then((response) => response.json())
+        .then((data) => {
+          data.forEach((repository) => {
             const repoName = repository.name;
             const repoURL = repository.html_url;
-            const pagesURL = repository.has_pages ? `https://${repository.owner.login}.github.io/${repoName}/` : "";
-            
-            const listItem = document.createElement("li");
-            const link = document.createElement("a");
-            link.href = repoURL;
-            link.innerText = repoName;
-            listItem.appendChild(link);
-            
+            const pagesURL = repository.has_pages
+              ? `https://${repository.owner.login}.github.io/${repoName}/`
+              : "";
+
+            const row = document.createElement("tr");
+
+            const nameCell = document.createElement("td");
+            const nameLink = document.createElement("a");
+            nameLink.href = repoURL;
+            nameLink.innerText = repoName;
+            nameCell.appendChild(nameLink);
+            row.appendChild(nameCell);
+
+            const urlCell = document.createElement("td");
+            const urlLink = document.createElement("a");
+            urlLink.href = repoURL;
+            urlLink.innerText = repoURL;
+            urlCell.appendChild(urlLink);
+            row.appendChild(urlCell);
+
+            const deployedCell = document.createElement("td");
             if (pagesURL) {
-              const pagesLink = document.createElement("a");
-              pagesLink.href = pagesURL;
-              pagesLink.innerText = " (Deployed)";
-              listItem.appendChild(pagesLink);
+              const deployedLink = document.createElement("a");
+              deployedLink.href = pagesURL;
+              deployedLink.innerText = "Yes";
+              deployedCell.appendChild(deployedLink);
             }
-            
-            repositoriesList.appendChild(listItem);
+            row.appendChild(deployedCell);
+
+            repositoriesList.appendChild(row);
           });
         })
-        .catch(error => console.error(error));
+        .catch((error) => console.error(error));
     </script>
   </body>
 </html>
