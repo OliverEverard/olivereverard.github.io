@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Github Repositories</title>
+  </head>
+  <body>
+    <h1>Github Repositories</h1>
+    <ul id="repositories"></ul>
+    
+    <script>
+      const apiURL = "https://api.github.com/users/olivereverard/repos?type=owner&sort=updated";
+      const repositoriesList = document.getElementById("repositories");
+      
+      fetch(apiURL)
+        .then(response => response.json())
+        .then(data => {
+          data.forEach(repository => {
+            const repoName = repository.name;
+            const repoURL = repository.html_url;
+            const pagesURL = repository.has_pages ? `https://${repository.owner.login}.github.io/${repoName}/` : "";
+            
+            const listItem = document.createElement("li");
+            const link = document.createElement("a");
+            link.href = repoURL;
+            link.innerText = repoName;
+            listItem.appendChild(link);
+            
+            if (pagesURL) {
+              const pagesLink = document.createElement("a");
+              pagesLink.href = pagesURL;
+              pagesLink.innerText = " (Deployed)";
+              listItem.appendChild(pagesLink);
+            }
+            
+            repositoriesList.appendChild(listItem);
+          });
+        })
+        .catch(error => console.error(error));
+    </script>
+  </body>
+</html>
