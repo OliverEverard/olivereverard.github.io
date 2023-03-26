@@ -11,7 +11,7 @@
     <div class="bg-gradient-to-r from-purple-500 to-indigo-500 text-transparent py-2 px-4 w-screen flex items-center">
       <h1 class="titleFont">GitHub Repositories</h1>
     </div>
-  <br>
+    <br>
     <table id="repositories" class="border border-purple-500 border-4 mt-20">
       <thead>
         <tr>
@@ -20,14 +20,22 @@
           <th class="py-2 px-4 border border-purple-500">Deployment</th>
         </tr>
       </thead>
-      <tbody></tbody>
+      <tbody>
+        <!-- Rows go here -->
+        <tr>
+          <td class="py-2 px-4 border border-purple-500"><a href="#">Repository Name</a></td>
+          <td class="py-2 px-4 border border-purple-500"><a href="#">https://github.com/user/repo</a></td>
+          <td class="py-2 px-4 border border-purple-500"><a href="#">Yes - GitHub Pages Link</a></td>
+        </tr>
+        <!-- More rows go here -->
+      </tbody>
     </table>
 
     <script>
       const apiURL =
         "https://api.github.com/users/olivereverard/repos?type=owner&sort=updated";
       const repositoriesList = document.getElementById("repositories").querySelector("tbody");
-
+    
       fetch(apiURL)
         .then((response) => response.json())
         .then((data) => {
@@ -37,38 +45,41 @@
             const pagesURL = repository.has_pages
               ? `https://${repository.owner.login}.github.io/${repoName}/`
               : "";
-
+    
             const row = document.createElement("tr");
-
+    
             const nameCell = document.createElement("td");
             const nameLink = document.createElement("a");
             nameLink.href = repoURL;
             nameLink.innerText = repoName;
+            nameCell.classList.add("border", "border-purple-500", "p-2");
             nameCell.appendChild(nameLink);
             row.appendChild(nameCell);
-
+    
             const urlCell = document.createElement("td");
             const urlLink = document.createElement("a");
             urlLink.href = repoURL;
             urlLink.innerText = "Repository URL";
+            urlCell.classList.add("border", "border-purple-500", "p-2");
             urlCell.appendChild(urlLink);
             row.appendChild(urlCell);
-
+    
             const deployedCell = document.createElement("td");
             if (pagesURL) {
               const deployedLink = document.createElement("a");
               deployedLink.href = pagesURL;
               deployedLink.innerText = "Yes - GitHub Pages Link";
+              deployedCell.classList.add("border", "border-purple-500", "p-2");
               deployedCell.appendChild(deployedLink);
             } else {
+              deployedCell.classList.add("border", "border-purple-500", "p-2");
               deployedCell.innerText = "No";
             }
             row.appendChild(deployedCell);
-
+    
             repositoriesList.appendChild(row);
           });
         })
         .catch((error) => console.error(error));
     </script>
-  </body>
-</html>
+    
