@@ -10,14 +10,13 @@
   <body>
     <div class="bg-gradient-to-r from-purple-500 to-indigo-500 text-transparent py-2 px-4 w-screen flex items-center">
       <h1 class="titleFont">GitHub Repositories</h1>
-      <br>
     </div>
     <table id="repositories">
       <thead>
         <tr>
           <th>Name</th>
-          <th>URL</th>
-          <th>Deployed</th>
+          <th>Repository URL</th>
+          <th>Deployment</th>
         </tr>
       </thead>
       <tbody></tbody>
@@ -50,7 +49,7 @@
             const urlCell = document.createElement("td");
             const urlLink = document.createElement("a");
             urlLink.href = repoURL;
-            urlLink.innerText = repoURL;
+            urlLink.innerText = "Repository URL";
             urlCell.appendChild(urlLink);
             row.appendChild(urlCell);
 
@@ -58,8 +57,10 @@
             if (pagesURL) {
               const deployedLink = document.createElement("a");
               deployedLink.href = pagesURL;
-              deployedLink.innerText = "Yes";
+              deployedLink.innerText = "Yes - GitHub Pages Link";
               deployedCell.appendChild(deployedLink);
+            } else {
+              deployedCell.innerText = "No";
             }
             row.appendChild(deployedCell);
 
