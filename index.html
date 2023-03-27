@@ -48,15 +48,7 @@
             nameCell.classList.add("border", "border-purple-500", "p-2");
             nameCell.appendChild(nameLink);
             row.appendChild(nameCell);
-    
-            const urlCell = document.createElement("td");
-            const urlLink = document.createElement("a");
-            urlLink.href = repoURL;
-            urlLink.innerText = "Repository URL";
-            urlCell.classList.add("border", "border-purple-500", "p-2");
-            urlCell.appendChild(urlLink);
-            row.appendChild(urlCell);
-    
+        
             const deployedCell = document.createElement("td");
             if (pagesURL) {
               const deployedLink = document.createElement("a");
