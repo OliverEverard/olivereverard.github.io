@@ -20,18 +20,21 @@
   <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/script-name.js"></script>
     </head>
   <body>
-
-    <!-- <table id="repositories" class="table-auto border border-double border-gray-300 border-4 mt-20 bg-white shadow-md" style="min-width: 60%">
-      <thead class="bg-gray-50 divide-y">
-        <tr>
-          <th class="py-2 px-4 border-b">Name</th>
-          <th class="py-2 px-4 border-b">Deployment</th>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table> -->
     <div id="navbar-container"></div>
+
+    </br>
+    </br>
+    <div id="section1" class="w-screen bg-blue-600">
+      <div class="container px-4 py-12 mx-auto">
+        <div class="max-w-full mx-auto mb-12 text-center">
+          <h1 class="text-4xl font-bold leading-tight text-white md:text-5xl">Welcome to my repositories</h1>
+          <p class="mt-3 text-xl font-medium text-gray-200">This is a list of all the public repositories on my GitHub, with the GitHub pages deployments if applicable</p>
+        </div>
+      </div>
+    </div>  
+  </br>
+  </br>
+
     <table id="repositories" class="min-w-[50%] divide-y divide-gray-200 rounded-lg shadow-lg mx-auto">
       <thead class="bg-gray-100">
         <tr>
@@ -81,7 +84,7 @@
             const nameLink = document.createElement("a");
             nameLink.href = repoURL;
             nameLink.innerText = repoName;
-            // nameCell.classList.add("border", "border-purple-500", "p-2", "hover:bg-gray-800");
+            nameCell.classList.add("py-1", "px-6");
             nameCell.appendChild(nameLink);
             row.appendChild(nameCell);
         
@@ -90,10 +93,10 @@
               const deployedLink = document.createElement("a");
               deployedLink.href = pagesURL;
               deployedLink.innerText = "Yes - GitHub Pages Link";
-              // deployedCell.classList.add("border", "border-purple-500", "p-2", "hover:bg-gray-800");
+              deployedCell.classList.add("py-1", "px-6");
               deployedCell.appendChild(deployedLink);
             } else {
-              // deployedCell.classList.add("border", "border-purple-500", "p-2", "hover:bg-gray-800");
+              deployedCell.classList.add("py-1", "px-6");
               deployedCell.innerText = "No";
             }
             row.appendChild(deployedCell);
