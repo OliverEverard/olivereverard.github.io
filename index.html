@@ -32,6 +32,11 @@
           </a>
           <ul class="hidden items-center gap-6 lg:flex">
             <li class="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
+              <a class="flex items-center" href="index.html">
+                Home
+              </a>
+            </li>
+            <li class="block p-1 font-sans text-sm font-normal leading-normal text-inherit antialiased">
               <a class="flex items-center" href="repositories.html">
                 Github Respoitories
               </a>
@@ -81,76 +86,4 @@
       </div>
     </nav>
 
-
-
-
-    <br>
-    <!-- <table id="repositories" class="table-auto border border-double border-gray-300 border-4 mt-20 bg-white shadow-md" style="min-width: 60%">
-      <thead class="bg-gray-50 divide-y">
-        <tr>
-          <th class="py-2 px-4 border-b">Name</th>
-          <th class="py-2 px-4 border-b">Deployment</th>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table> -->
-
-    <table id="repositories" class="min-w-full divide-y divide-gray-200 rounded-lg shadow-lg">
-      <thead class="bg-gray-100">
-        <tr>
-          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Deployment</th>
-        </tr>
-      </thead>
-      <tbody class="bg-white divide-y divide-gray-200">
-      </tbody>
-    </table>
-    
-    
-
-
-    <script>
-      const apiURL =
-        "https://api.github.com/users/olivereverard/repos?type=owner&sort=updated";
-      const repositoriesList = document.getElementById("repositories").querySelector("tbody");
-    
-      fetch(apiURL)
-        .then((response) => response.json())
-        .then((data) => {
-          data.forEach((repository) => {
-            const repoName = repository.name;
-            const repoURL = repository.html_url;
-            const pagesURL = repository.has_pages
-              ? `https://${repository.owner.login}.github.io/${repoName}/`
-              : "";
-    
-            const row = document.createElement("tr");
-    
-            const nameCell = document.createElement("td");
-            const nameLink = document.createElement("a");
-            nameLink.href = repoURL;
-            nameLink.innerText = repoName;
-            // nameCell.classList.add("border", "border-purple-500", "p-2", "hover:bg-gray-800");
-            nameCell.appendChild(nameLink);
-            row.appendChild(nameCell);
-        
-            const deployedCell = document.createElement("td");
-            if (pagesURL) {
-              const deployedLink = document.createElement("a");
-              deployedLink.href = pagesURL;
-              deployedLink.innerText = "Yes - GitHub Pages Link";
-              // deployedCell.classList.add("border", "border-purple-500", "p-2", "hover:bg-gray-800");
-              deployedCell.appendChild(deployedLink);
-            } else {
-              // deployedCell.classList.add("border", "border-purple-500", "p-2", "hover:bg-gray-800");
-              deployedCell.innerText = "No";
-            }
-            row.appendChild(deployedCell);
-    
-            repositoriesList.appendChild(row);
-          });
-        })
-        .catch((error) => console.error(error));
-    </script>
     
