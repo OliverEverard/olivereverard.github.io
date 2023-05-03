@@ -41,9 +41,9 @@
       </tbody>
     </table>
   </div>   -->
-
-  <div class="grid grid-cols-3 gap-6 mx-auto w-[55%] my-8">
-    <div class="bg-white dark:bg-sky-700 rounded-lg shadow-lg p-6">
+  <div class="bg-white dark:bg-sky-700 rounded-lg shadow-lg p-6 col-span-2 w-[55%] mx-auto">
+  <div class="grid grid-cols-3 gap-6 mx-auto w-[90%] my-8">
+    <div class="bg-sky-100 dark:bg-sky-700 rounded-lg shadow-lg p-6">
       <div class="container px-4 py-4 mx-auto">
         <div class="max-w-full mx-auto mb-12 text-center">
           <h1 class="text-4xl font-bold leading-tight text-sky-700 dark:text-sky-900 md:text-5xl">My Repositories</h1>
@@ -53,14 +53,14 @@
 
     </div>
   
-    <div class="bg-white dark:bg-sky-700 rounded-lg shadow-lg p-6 col-span-2">
+    <div class="bg-sky-100 dark:bg-sky-700 rounded-lg shadow-lg p-6 col-span-2">
       <div class="container px-4 py-4 mx-auto">
       </div>
       <p class="mt-3 text-xl font-medium text-sky-950 dark:text-sky-600 text-center">This is a list of all the public repositories on my GitHub, with the GitHub pages deployments if applicable</p>
     </div>
   </div>
 
-  <div class="mx-auto w-[55%] bg-white dark:bg-sky-700 my-8 rounded-lg p-6 shadow-lg">
+  <div class="mx-auto w-[90%] bg-sky-100 dark:bg-sky-700 my-8 rounded-lg p-6 shadow-lg">
   <table id="repositories" class="min-w-[80%] divide-y divide-gray-200 rounded-lg shadow-lg mx-auto my-4">
     <thead class="bg-gray-100">
       <tr>
@@ -73,7 +73,8 @@
   </table>
 </div>
 </div>
-    
+</div>
+
     <script>
 
       fetch('../components/navbar.html')
