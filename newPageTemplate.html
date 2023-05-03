@@ -10,18 +10,24 @@
     <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/script-name.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8368997072131126"
      crossorigin="anonymous"></script>
- 
-    </head>
-    <body class="bg-sky-100 dark:bg-sky-950">
+  </head>
 
+
+  <body class="bg-sky-100 dark:bg-gray-900">
     <div id="navbar-container"></div>
+
     <script>
-      fetch('/components/navbar.html')
+
+      fetch('../components/navbar.html')
         .then(response => response.text())
         .then(html => {
-          document.querySelector('#navbar-container').innerHTML = html
-        })
+          document.querySelector('#navbar-container').innerHTML = html;
+        });
     </script>
-  </body>
 
+  <div class="bg-white dark:bg-sky-900 rounded-lg shadow-lg p-6 col-span-2 w-[50%] w-screen mx-auto block w-full max-w-screen-xl">
+    <p1> This is a new page</p1>
+  </div>
+
+    </body>
   
