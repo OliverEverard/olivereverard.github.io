@@ -1,133 +1,42 @@
-<!-- Container for demo purpose -->
-<div class="container my-24 px-6 mx-auto">
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Oli Everard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8368997072131126"
+     crossorigin="anonymous"></script>
+     <link rel="icon" type="image/x-icon" href="/src/favicon.ico">
+  </head>
 
-  <!-- Section: Design Block -->
-  <section class="mb-32 text-gray-800">
-    <style>
-      .zoom:hover img {
-        transform: scale(1.1);
-      }
-    </style>
+  <body class="bg-white">
+    <div id="navbar-container"></div>
 
+    <script>
 
-    <div class="grid lg:grid-cols-3 gap-6">
-      <div class="zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover"
-        style="background-position: 50%;" data-mdb-ripple="true" data-mdb-ripple-color="dark">
-        <img src="https://mdbootstrap.com/img/new/standard/city/041.jpg"
-          class="w-full transition duration-300 ease-linear align-middle"/>
-        <a href="https://olieverard.co.uk/iconCreator">
-          <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
-            style="background-color: rgba(0, 0, 0, 0.3)">
-            <div class="flex justify-start items-end h-full">
-              <h5 class="text-lg font-bold text-white m-6">Icon File Generator</h5>
-            </div>
-          </div>
-          <div class="hover-overlay">
-            <div
-              class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
-              style="background-color: rgba(253, 253, 253, 0.15)"></div>
-          </div>
-        </a>
-      </div>
+      fetch('/components/navbar.html')
+        .then(response => response.text())
+        .then(html => {
+          document.querySelector('#navbar-container').innerHTML = html;
+        });
 
-      <div class="zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover"
-        style="background-position: 50%;" data-mdb-ripple="true" data-mdb-ripple-color="dark">
-        <img src="https://mdbootstrap.com/img/new/standard/city/044.jpg"
-          class="w-full transition duration-300 ease-linear align-middle" />
-        <a href="#!">
-          <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
-            style="background-color: rgba(0, 0, 0, 0.3)">
-            <div class="flex justify-start items-end h-full">
-              <h5 class="text-lg font-bold text-white m-6">Coming Soon.....</h5>
-            </div>
-          </div>
-          <div class="hover-overlay">
-            <div
-              class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
-              style="background-color: rgba(253, 253, 253, 0.15)"></div>
-          </div>
-        </a>
-      </div>
+        fetch('/components/useless-projects.html')
+        .then(response => response.text())
+        .then(html => {
+          document.querySelector('#tools-container').innerHTML = html;
+        });
+    </script>
 
-      <div class="zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover"
-        style="background-position: 50%;" data-mdb-ripple="true" data-mdb-ripple-color="dark">
-        <img src="https://mdbootstrap.com/img/new/standard/city/045.jpg"
-          class="w-full transition duration-300 ease-linear align-middle" />
-        <a href="#!">
-          <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
-            style="background-color: rgba(0, 0, 0, 0.3)">
-            <div class="flex justify-start items-end h-full">
-              <h5 class="text-lg font-bold text-white m-6">Coming Soon.....</h5>
-            </div>
-          </div>
-          <div class="hover-overlay">
-            <div
-              class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
-              style="background-color: rgba(253, 253, 253, 0.15)"></div>
-          </div>
-        </a>
-      </div>
+    
 
-      <div class="zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover"
-        style="background-position: 50%;" data-mdb-ripple="true" data-mdb-ripple-color="dark">
-        <img src="https://mdbootstrap.com/img/new/standard/city/047.jpg"
-          class="w-full transition duration-300 ease-linear align-middle" />
-        <a href="#!">
-          <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
-            style="background-color: rgba(0, 0, 0, 0.3)">
-            <div class="flex justify-start items-end h-full">
-              <h5 class="text-lg font-bold text-white m-6">Coming Soon.....</h5>
-            </div>
-          </div>
-          <div class="hover-overlay">
-            <div
-              class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
-              style="background-color: rgba(253, 253, 253, 0.15)"></div>
-          </div>
-        </a>
-      </div>
-
-      <div class="zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover"
-        style="background-position: 50%;" data-mdb-ripple="true" data-mdb-ripple-color="dark">
-        <img src="https://mdbootstrap.com/img/new/standard/city/048.jpg"
-          class="w-full transition duration-300 ease-linear align-middle" />
-        <a href="#!">
-          <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
-            style="background-color: rgba(0, 0, 0, 0.3)">
-            <div class="flex justify-start items-end h-full">
-              <h5 class="text-lg font-bold text-white m-6">Coming Soon.....</h5>
-            </div>
-          </div>
-          <div class="hover-overlay">
-            <div
-              class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
-              style="background-color: rgba(253, 253, 253, 0.15)"></div>
-          </div>
-        </a>
-      </div>
-
-      <div class="zoom shadow-lg rounded-lg relative overflow-hidden bg-no-repeat bg-cover"
-        style="background-position: 50%;" data-mdb-ripple="true" data-mdb-ripple-color="dark">
-        <img src="https://mdbootstrap.com/img/new/standard/city/049.jpg"
-          class="w-full transition duration-300 ease-linear align-middle" />
-        <a href="#!">
-          <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
-            style="background-color: rgba(0, 0, 0, 0.3)">
-            <div class="flex justify-start items-end h-full">
-              <h5 class="text-lg font-bold text-white m-6">Coming Soon.....</h5>
-            </div>
-          </div>
-          <div class="hover-overlay">
-            <div
-              class="mask absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"
-              style="background-color: rgba(253, 253, 253, 0.15)"></div>
-          </div>
-        </a>
-      </div>
+<section class="text-gray-600 body-font">
+  <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+    <div class="text-center lg:w-2/3 w-full">
+      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Useful Web Tools</h1>
     </div>
+  </div>
+</section>
 
-  </section>
-  <!-- Section: Design Block -->
+<div id="tools-container"></div>
+
+    </body>
   
-</div>
-<!-- Container for demo purpose -->
