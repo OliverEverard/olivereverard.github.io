@@ -27,7 +27,7 @@
       <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">My Public GitHub
         <br class="hidden lg:inline-block">Repositories
       </h1>
-      <p class="mb-8 leading-relaxed">This is a complete list of all of the public repositories on my GitHub, including the deployments if applicable. <br/>The table automatically updates, so keep checking back for new projects!</p>
+      <p class="mb-8 leading-relaxed sm:text-2xl">This is a complete list of all of the public repositories on my GitHub, including the deployments if applicable. <br/>The table automatically updates, so keep checking back for new projects!</p>
       <div class="flex justify-center">
         <a href="https://github.com/OliverEverard" class="inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">Go to Profile</a>
       </div>
@@ -44,8 +44,8 @@
         <table class="min-w-full text-left text-sm font-light" id="repositories">
           <thead class="border-b font-medium dark:border-neutral-500">
             <tr>
-              <th scope="col" class="px-6 py-3 text-left text-xl font-medium text-blue-500 tracking-wider">Name</th>
-              <th scope="col" class="px-6 py-3 text-left text-xl font-medium text-blue-500 tracking-wider">Deployment</th>
+              <th scope="col" class="px-6 py-3 text-left text-xl font-medium sm:text-2xl text-blue-500 tracking-wider">Name</th>
+              <th scope="col" class="px-6 py-3 text-left text-xl font-medium sm:text-2xl text-blue-500 tracking-wider">Deployment</th>
             </tr>
           </thead>
           <tbody>
@@ -80,7 +80,7 @@
             const nameLink = document.createElement("a");
             nameLink.href = repoURL;
             nameLink.innerText = repoName;
-            nameCell.classList.add("py-1", "px-6", "border-b", "text-lg");
+            nameCell.classList.add("py-1", "px-6", "border-b", "text-lg", "sm:text-2xl");
             nameCell.appendChild(nameLink);
             row.appendChild(nameCell);
         
@@ -89,10 +89,10 @@
               const deployedLink = document.createElement("a");
               deployedLink.href = pagesURL;
               deployedLink.innerText = "Yes - GitHub Pages Link";
-              deployedCell.classList.add("border-b", "py-1", "px-6", "text-lg");
+              deployedCell.classList.add("border-b", "py-1", "px-6", "text-lg", "sm:text-2xl");
               deployedCell.appendChild(deployedLink);
             } else {
-              deployedCell.classList.add("py-1", "px-6", "border-b", "text-lg");
+              deployedCell.classList.add("py-1", "px-6", "border-b", "text-lg", "sm:text-2xl");
               deployedCell.innerText = "No";
             }
             row.appendChild(deployedCell);
